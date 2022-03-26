@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta de información personal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">REGISTRO DE HOJA DE VIDA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="Row">
+      <div class="col-md-8">
+        <label for="exampleImputEmail1">Información personal</label>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Apellido</label>
+            <input type="text" class="form-control" id="last" required>
+          </div>
+        </form>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Tipo identificación</label>
+          <select name="select" id="idType" class="form-control" required>
+            <option value="" selected class="form-control">Seleccionar</option>
+            <option value="Cedula de ciudadanía" class="form-control">Cedula de ciudadanía</option>
+            <option value="Pasaporte" class="form-control">Pasaporte</option>
+            <option value="Tarjeta de identidad" class="form-control">Tarjeta de identidad</option>
+          </select><br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Numero de identificación</label>
+            <input type="number" class="form-control" id="idNumber" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Numero de celular</label>
+            <input type="number" class="form-control" id="phoneNumber" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+              onchange="pruebaemail(email.value)" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Departamento</label>
+            <input type="text" class="form-control" id="depto" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Municipio</label>
+            <input type="text" class="form-control" id="mpio" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Dirección</label>
+            <input type="mail" class="form-control" id="address" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="dateBirth" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Edad</label>
+            <input type="number" class="form-control" id="age" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Género</label>
+            <select name="select" id="gender" class="form-control" required>
+              <option value="" selected class="form-control">Seleccionar</option>
+              <option value="Femenino" class="form-control">Femenino</option>
+              <option value="Masculino" class="form-control">Masculino</option>
+              <option value="Otro" class="form-control">Otro</option>
+            </select><br>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Teléfono</label>
+            <input type="mail" class="form-control" id="phone" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nacionalidad</label>
+            <input type="text" class="form-control" id="nationality" aria-describedby="emailHelp" required>
+          </div>
+        </div><br>
+      </div>
+      <hr noshade="noshade" size="2" width="100%" />
+      <div class="col-md-8">
+        <label for="exampleImputEmail1">Información académica</label>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Institución</label>
+            <input type="text" class="form-control" id="institucion" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Año titulo</label>
+            <input type="number" class="form-control" id="anioTitulo" required>
+          </div>
+        </form>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Ciudad</label>
+            <input type="text" class="form-control" id="cityInstitucion" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">País</label>
+            <input type="text" class="form-control" id="countryInstitucion" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Idioma</label>
+            <select name="select" id="language" class="form-control" required>
+              <option value="" selected class="form-control">Seleccionar idioma</option>
+              <option value="Español" class="form-control">Español</option>
+              <option value="Inglés" class="form-control">Inglés</option>
+              <option value="Francés" class="form-control">Francés</option>
+              <option value="Alemán" class="form-control">Alemán</option>
+              <option value="Portugués" class="form-control">Portugués</option>
+            </select><br>
+          </div>
+        </div>
+      </div>
+      <hr noshade="noshade" size="2" width="100%" />
+      <div class="col-md-8">
+        <label for="exampleImputEmail1">Información laboral</label>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre de la empresa</label>
+            <input type="text" class="form-control" id="nameEmpresa" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Cargo</label>
+            <input type="text" class="form-control" id="cargo" required>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ciudad</label>
+              <input type="text" class="form-control" id="cityEmpresa" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">País</label>
+              <input type="text" class="form-control" id="countryEmpresa" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contacto</label>
+              <input type="text" class="form-control" id="contactoEmpresa" required>
+            </div>
+          </div>
+        </form>
+        <button class="btn btn-primary" onclick="guardar()">Guardar</button>
+        <a href="#" class="btn btn-primary" onclick="leer()">Consultar</a>
+      </div>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="fila">
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="./js/conexion.js"></script>
+  <script src="./js/guardar.js"></script>
+  <script src="./js/leer.js"></script>
+  <script src="./js/validaciones.js"></script>
+  <div class="container">
+<hr>
+    <h2>Envio correo</h2>
+    <div class="row">
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input class="form-control" type="text" name="name" id="name">
+            </div>
+            <div class="form-group">
+                <label for="last">Apellidos</label>
+                <input class="form-control" type="text" name="last" id="last">
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input class="form-control" type="text" name="phone" id="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <input class="form-control" type="text" name="message" id="message">
+            </div>
+
+            <input class="btn btn-success" type="submit" id="button" value="Send Email">
+        </form>
+
+    </div>
+</div>
+
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    emailjs.init('lrOkD-jT_PKNhmkCm')
+</script>
+<script>
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+        .addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            btn.value = 'enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_dhlpxva';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Enviar correo';
+                    alert('Mensaje enviado!');
+                }, (err) => {
+                    btn.value = 'Enviar correo';
+                    alert("Mensaje no enviado, intente de nuevo más tarde");
+                });
+        });
+</script>
+
+
+</body>
+
+</html>
